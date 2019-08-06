@@ -33,9 +33,10 @@
 # 10.times do
 # 	tags = Tag.create(title: "##{Faker::Book.title}")
 # end 
+tags = Tag.all
 gossips= Gossip.all
-gossips.each do |g|
-	rang = Faker::Number.between(from: 1, to: 10)
-	tags = Tag.find(rang)
-	tag_gossips = TagGossip.create(tag: tags, gossip: g)  
+100.times do
+	a = rand(0..9)
+	b = rand(0..19)
+	tag_gossips = TagGossip.create(tag: tags[a], gossip: gossips[b])  
 end 

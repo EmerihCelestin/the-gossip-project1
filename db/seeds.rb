@@ -19,5 +19,23 @@
 # 	u.city = city
 # 	u.save
 # end
-
- 
+# 20.times do 
+# 	gossips = Gossip.create(title: Faker::Music.album, content: Faker::Movie.quote)
+# end	
+# gossips = Gossip.all 
+# user = []
+# gossips.each do |g|
+# 	rang = Faker::Number.between(from: 1, to: 10)
+# 	user = User.find(rang)
+# 	g.user = user
+# 	g.save
+# end
+# 10.times do
+# 	tags = Tag.create(title: "##{Faker::Book.title}")
+# end 
+gossips= Gossip.all
+gossips.each do |g|
+	rang = Faker::Number.between(from: 1, to: 10)
+	tags = Tag.find(rang)
+	tag_gossips = TagGossip.create(tag: tags, gossip: g)  
+end 
